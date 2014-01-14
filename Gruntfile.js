@@ -19,21 +19,11 @@ module.exports = function (grunt) {
 			options: gtx.readJSON('.jshintrc', {
 				reporter: './node_modules/jshint-path-reporter'
 			}),
-			support: ['Gruntfile.js', 'tasks/**/*.js', 'test/*.js', 'app/**/*.js', 'lib/**/*.js']
+			all: ['Gruntfile.js', 'tasks/**/*.js', 'test/*.js', 'app/**/*.js', 'lib/**/*.js']
 		},
 		clean: {
 			tmp: ['tmp/**/*', 'test/tmp/**/*'],
 			dump: ['test/**/dump']
-		},
-		copy: {
-			bootstrap_js: {
-				src: 'bower_components/bootstrap/dist/js//bootstrap.min.js',
-				dest: 'public/js/bootstrap.js'
-			},
-			bootstrap_fonts: {
-				src: 'bower_components/bootstrap/dist/fonts/*.*',
-				dest: 'public/fonts'
-			}
 		},
 		less: {
 			build: {
@@ -47,18 +37,42 @@ module.exports = function (grunt) {
 		}
 	});
 
+	gtx.alias('components', [
+		{	src: 'bower_components/bootstrap/dist/js//bootstrap.min.js',
+			dest: 'public/js/bootstrap.js'
+		},
+		{	src: '*.*',
+			expand: true,
+			cwd: 'bower_components/bootstrap/dist/fonts',
+			dest: 'public/fonts/'
+		}
+	].map(function (opts) {
+		return gtx.configFor('copy', opts);
+	}));
+
+	gtx.config({
+		build_data: {
+			deploy: {
+				options: {
+					config: './conf/tsd-json'
+				}
+			}
+		}
+	});
+
 	gtx.alias('prep', [
 		'clean',
 		'jshint'
 	]);
 	gtx.alias('build', [
 		'prep',
-		'copy:bootstrap_fonts',
-		'copy:bootstrap_js',
+		'components',
 		'less:build'
 	]);
 	gtx.alias('test', ['build']);
 	gtx.alias('default', ['test']);
+
+	gtx.alias('dev', ['build_data:deploy']);
 
 	gtx.finalise();
 };

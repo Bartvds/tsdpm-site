@@ -20,11 +20,12 @@ var mount = st({
 });
 
 var app = connect();
-app.use(connect.responseTime());
-app.use(connect.logger('dev'));
+// app.use(connect.responseTime());
+// app.use(connect.logger('dev'));
 app.use(mount);
 app.use(function (req, res) {
-	res.end('hello world\n');
+	res.statusCode = 404;
+	res.end('not found');
 });
 
 http.createServer(app).listen(conf.port, function () {

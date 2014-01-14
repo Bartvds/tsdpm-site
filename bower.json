@@ -6,7 +6,9 @@
   ],
   "license": "MIT",
   "private": true,
+  "directory": "public/bower_components",
   "dependencies": {
-    "bootstrap": "~3.0.3"
+    "bootstrap": "~3.0.3",
+    "polymer": "~0.1.2"
   }
 }

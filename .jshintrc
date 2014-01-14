@@ -24,6 +24,8 @@
 		"tv4": true,
 		"define": true,
 		"chai": true,
-		"assert": true
+		"assert": true,
+		"angular": true,
+		"$": true
 	}
 }
