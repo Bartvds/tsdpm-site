@@ -6,6 +6,39 @@
 
 :construction: Updating after [tsd](https://github.com/DefinitelyTyped/tsd) `~v0.5.x`
 
+## Usage
+
+Run server:
+
+````shell
+$ node app/server.js
+````
+
+Open in browser:
+
+    http://localhost:5000
+
+## Build
+
+Make sure you have dependencies:
+
+````shell
+$ npm install
+````
+
+Rebuild site:
+
+````shell
+$ grunt build
+````
+
+Manually build / update data JSON:
+
+````shell
+$ grunt update
+````
+
+
 ## Contributing
 
 Contributions are very welcome, please create an Issue before doing something major.
