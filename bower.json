@@ -1,0 +1,12 @@
+{
+  "name": "tsdpm-site",
+  "homepage": "https://github.com/Diullei/tsdpm-site",
+  "keywords": [
+    "tsd"
+  ],
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "bootstrap": "~3.0.3"
+  }
+}

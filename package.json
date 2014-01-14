@@ -1,0 +1,60 @@
+{
+  "name": "tsdpm-site",
+  "private": true,
+  "version": "0.0.1",
+  "homepage": "https://github.com/Diullei/tsdpm-site",
+  "authors": [
+    {
+      "name": "Bart van der Schoor",
+      "url": "https://github.com/Bartvds"
+    },
+    {
+      "name": "Diullei Gomes",
+      "url": "https://github.com/Diullei"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Diullei/tsdpm-site"
+  },
+  "bugs": {
+    "url": "https://github.com/Diullei/tsdpm-site/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/Diullei/tsdpm-site/blob/master/LICENSE-MIT"
+    }
+  ],
+  "keywords": [
+    "typescript",
+    "tsd"
+  ],
+  "main": "app/server.js",
+  "engines": {
+    "node": ">= 0.10.0"
+  },
+  "scripts": {
+    "test": "grunt test"
+  },
+  "dependencies": {
+    "tsd": "git://github.com/DefinitelyTyped/tsd/#0.5.2-alpha.10",
+    "q": "~0.9.7",
+    "q-io": "~1.10.6",
+    "connect": "~2.11.2",
+    "st": "~0.2.3"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.2",
+    "grunt-cli": "~0.1",
+    "grunt-contrib-clean": "~0.5.0",
+    "grunt-contrib-jshint": "~0.7.2",
+    "grunt-contrib-less": "~0.9.0",
+    "jshint-path-reporter": "0.1",
+    "grunt-contrib-copy": "~0.4.1",
+    "gruntfile-gtx": "~0.2.2"
+  },
+  "peerDependencies": {
+    "grunt": "~0.4.1"
+  }
+}
