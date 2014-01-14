@@ -69,10 +69,12 @@ module.exports = function (grunt) {
 		'components',
 		'less:build'
 	]);
+	gtx.alias('update', ['build_data:deploy']);
+
 	gtx.alias('test', ['build']);
 	gtx.alias('default', ['test']);
 
-	gtx.alias('dev', ['build_data:deploy']);
+	gtx.alias('dev', ['update']);
 
 	gtx.finalise();
 };

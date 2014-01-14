@@ -1,10 +1,12 @@
 module.exports = function (writeln) {
+	if (!writeln) {
+		writeln = function (str) {
+			console.log(str);
+		};
+	}
 
 	var path = require('path');
 	var tsd = require('tsd');
-	var Q = require('q');
-	var Lazy = require('lazy.js');
-	var Strict = Lazy.strict();
 
 	function getAPI(options) {
 		writeln('-> config: ' + options.config);
@@ -26,7 +28,7 @@ module.exports = function (writeln) {
 			//query.parseInfo = true;
 			query.addNamePattern('*');
 
-			return api.select(query, opts).progress(function(note) {
+			return api.select(query, opts).progress(function (note) {
 				writeln('-> note: ' + note);
 			});
 		}).then(function (selection) {

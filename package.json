@@ -39,11 +39,8 @@
   },
   "dependencies": {
     "tsd": "git://github.com/DefinitelyTyped/tsd/#0.5.2-alpha.10",
-    "q": "~0.9.7",
-    "q-io": "~1.10.6",
     "connect": "~2.11.2",
-    "st": "~0.2.3",
-    "lazy.js": "~0.3.2"
+    "st": "~0.2.3"
   },
   "devDependencies": {
     "grunt": "~0.4.2",
